@@ -14,6 +14,7 @@ const UserProfile = () => {
           withCredentials: true,
         });
         console.log("User data fetched from backend:", response.data);
+        console.log("User image path:", response.data.userImage); // Add this line
         setUser(response.data);
       } catch (err) {
         setError('Error fetching user data');
