@@ -8,13 +8,13 @@ function Admin_Sidebar({ className }) {
     return (
         <div className={`${sidebar_style.sidebar} ${className}`}>
             <div><br /></div>
-            <a href="/Home">Home</a>
-            <a href="/Report_a_Crime">Report Crime</a> 
-            <a href="/Pending_Cases">Pending cases</a>
-            {role === "admin" && <a href="/Closed_Cases">Closed Cases</a>} {/* Show only for admin */}
-            {role === "admin" && <a href="/Ongoing_Investigations">Ongoing Investigations</a>} {/* Show only for admin */}
-            <a href="/Settings">settings</a>
-            <a href="/Contact_Us">Contact us</a>
+            <a href="https://backend-two-henna-56.vercel.app/Home">Home</a>
+            <a href="https://backend-two-henna-56.vercel.app/Report_a_Crime">Report Crime</a> 
+            <a href="https://backend-two-henna-56.vercel.app/Pending_Cases">Pending cases</a>
+            {role === "admin" && <a href="https://backend-two-henna-56.vercel.app/Closed_Cases">Closed Cases</a>} {/* Show only for admin */}
+            {role === "admin" && <a href="https://backend-two-henna-56.vercel.app/Ongoing_Investigations">Ongoing Investigations</a>} {/* Show only for admin */}
+            <a href="https://backend-two-henna-56.vercel.app/Settings">settings</a>
+            <a href="https://backend-two-henna-56.vercel.app/Contact_Us">Contact us</a>
         </div>
     );
 }
