@@ -51,21 +51,21 @@ const CriminalProfile = () => {
         <div className={styles.images}>
           {report.ReporterImage && (
             <img
-              src={`https://backend-two-henna-56.vercel.app/database/uploads/${report.ReporterImage}`}
+              src={`https://res.cloudinary.com/dubch5hac/image/upload/c_fill,w_300,h_300,q_auto/${report.ReporterImage}`}
               alt="Reporter"
               className={styles.image}
             />
           )}
           {report.CNIC_Front_Image && (
             <img
-              src={`https://backend-two-henna-56.vercel.app/database/uploads/${report.CNIC_Front_Image}`}
+              src={`https://res.cloudinary.com/dubch5hac/image/upload/c_fill,w_300,h_300,q_auto/${report.CNIC_Front_Image}`}
               alt="CNIC Front"
               className={styles.image}
             />
           )}
           {report.ProofImage && (
             <img
-              src={`https://backend-two-henna-56.vercel.app/database/uploads/${report.ProofImage}`}
+              src={`https://res.cloudinary.com/dubch5hac/image/upload/c_fill,w_300,h_300,q_auto/${report.ProofImage}`}
               alt="Proof"
               className={styles.image}
             />

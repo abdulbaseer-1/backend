@@ -36,8 +36,10 @@ const UserProfile = () => {
     <div className={styles.container}>
       <h1 className={styles.heading}>User Profile</h1>
       <div className={styles.profile}>
-        <img
-          src={user && user.userImage ? `https://backend-two-henna-56.vercel.app/database/uploads/${user.userImage}` : testImage}
+      <img
+          src={user && user.userImage 
+            ? `https://res.cloudinary.com/dubch5hac/image/upload/c_fill,w_300,h_300,q_auto/${user.userImage}`
+            : testImage}
           alt="User"
           className={styles.image}
         />
