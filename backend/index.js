@@ -50,8 +50,10 @@ app.use('/database/uploads', express.static(path.join(__dirname, '../database/up
 //allowed methods
 //allowed headers
 app.use(cors({
-  origin: 'https://localhost:5173',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
+  origin: process.env.NODE_ENV === 'production' 
+    ? ['https://your-frontend-domain.vercel.app'] // Update with your frontend domain
+    : 'https://localhost:5173',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
 }));
@@ -84,15 +86,23 @@ app.get('/', (req, res) => {
 mongoose.connect('mongodb+srv://abdulbaseers130:FMXC7lNF92zXK2ij@semesterproject.vdpil.mongodb.net/?retryWrites=true&w=majority&appName=SemesterProject')
     .then(() => {
         console.log('Connected to MongoDB');
-        //converting to https server
-        const server = https.createServer({
-          key: fs.readFileSync(path.join(__dirname, '../config/certificates/key.pem')),
-          cert: fs.readFileSync(path.join(__dirname, '../config/certificates/cert.pem')),
-        }, app);
+        
+        if (process.env.NODE_ENV === 'development') {
+            // Use HTTPS for local development
+            const server = https.createServer({
+                key: fs.readFileSync(path.join(__dirname, '../config/certificates/key.pem')),
+                cert: fs.readFileSync(path.join(__dirname, '../config/certificates/cert.pem')),
+            }, app);
 
-        server.listen(PORT, () => { // server.listen for https
-            console.log(`Server is listening on port ${PORT}`);
-        });
+            server.listen(PORT, () => {
+                console.log(`Development server is listening on port ${PORT}`);
+            });
+        } else {
+            // For production (Vercel)
+            app.listen(PORT, () => {
+                console.log(`Production server is listening on port ${PORT}`);
+            });
+        }
     })
     .catch((error) => {
         console.error('Connection failed: ', error);
