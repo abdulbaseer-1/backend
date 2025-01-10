@@ -51,7 +51,7 @@ app.use('/database/uploads', express.static(path.join(__dirname, '../database/up
 //allowed headers
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://your-frontend-domain.vercel.app'] // Update with your frontend domain
+    ? ['https://backend-two-henna-56.vercel.app'] 
     : 'https://localhost:5173',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
