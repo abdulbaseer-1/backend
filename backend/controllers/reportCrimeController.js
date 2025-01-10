@@ -59,9 +59,9 @@ const createCrime = async (req, res) => {
     try{
         console.log('inside createcrime try block');
 
-        const CNIC_Front_Image = req.files?.CNIC_Front_Image ? req.files.CNIC_Front_Image[0].filename : null;
-        const ReporterImage = req.files?.ReporterImage ? req.files.ReporterImage[0].filename : null;
-        const ProofImage = req.files?.ProofImage ? req.files.ProofImage[0].filename : null;
+        const CNIC_Front_Image = req.files?.CNIC_Front_Image ? req.files.CNIC_Front_Image[0].path : null;
+        const ReporterImage = req.files?.ReporterImage ? req.files.ReporterImage[0].path : null;
+        const ProofImage = req.files?.ProofImage ? req.files.ProofImage[0].path : null;
 
 
         const crime = await Crime.create({
