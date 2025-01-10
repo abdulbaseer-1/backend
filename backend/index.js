@@ -66,12 +66,17 @@ app.use(logger); // not inbuilt
 
 
 //APIs
-app.use('/', (req, res) => {
-  res.status(200).json("Connection Succesful");
-});
 app.use('/api/users', userRoutes);
 app.use('/api/reports', reportRoutes); // will rename but jugar here, both are api, so which to enter, just enter the first
 app.use('/api/admins', adminRoutes);
+
+//place root last
+app.get('/', (req, res) => {
+  res.send(`
+    <h1>Crime Reporting System API</h1>
+    <p>Status: Connection Successful</p>
+  `);
+});
 
 
 
