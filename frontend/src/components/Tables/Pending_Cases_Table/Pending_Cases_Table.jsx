@@ -76,6 +76,12 @@ const Pending_Cases_Table = ({ className }) => {
       alert('Error deleting report. Please try again.');
     }
   };
+
+  const handleViewDetails = (id) => {
+    console.log('View details for ID:', id);
+    setID({id});
+    navigate('/Report_View');
+  };
   
 
   return (
