@@ -1,20 +1,20 @@
 import React from 'react';
 import sidebar_style from "./Sidebar.module.css";
+import { Link } from 'react-router-dom'; 
 
 function Admin_Sidebar({ className }) {
-    // Retrieve role from localStorage
     const role = localStorage.getItem('role');
 
     return (
         <div className={`${sidebar_style.sidebar} ${className}`}>
             <div><br /></div>
-            <a href="https://backend-two-henna-56.vercel.app/Home">Home</a>
-            <a href="https://backend-two-henna-56.vercel.app/Report_a_Crime">Report Crime</a> 
-            <a href="https://backend-two-henna-56.vercel.app/Pending_Cases">Pending cases</a>
-            {role === "admin" && <a href="https://backend-two-henna-56.vercel.app/Closed_Cases">Closed Cases</a>} {/* Show only for admin */}
-            {role === "admin" && <a href="https://backend-two-henna-56.vercel.app/Ongoing_Investigations">Ongoing Investigations</a>} {/* Show only for admin */}
-            <a href="https://backend-two-henna-56.vercel.app/Settings">settings</a>
-            <a href="https://backend-two-henna-56.vercel.app/Contact_Us">Contact us</a>
+            <Link to="/Home">Home</Link>
+            <Link to="/Report_a_Crime">Report Crime</Link> 
+            <Link to="/Pending_Cases">Pending cases</Link>
+            {role === "admin" && <Link to="/Closed_Cases">Closed Cases</Link>}
+            {role === "admin" && <Link to="/Ongoing_Investigations">Ongoing Investigations</Link>}
+            <Link to="/Settings">Settings</Link>
+            <Link to="/Contact_Us">Contact us</Link>
         </div>
     );
 }
