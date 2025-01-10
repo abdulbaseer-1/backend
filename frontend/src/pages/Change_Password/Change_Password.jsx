@@ -22,7 +22,7 @@ const ChangePassword = () => {
 
     try {
       const response = await axios.put(
-        'https://localhost:8080/api/users/change-password',
+        'https://backend-two-henna-56.vercel.app/api/users/change-password',
         { previousPassword, newPassword, confirmPassword },
         { withCredentials: true }
       );

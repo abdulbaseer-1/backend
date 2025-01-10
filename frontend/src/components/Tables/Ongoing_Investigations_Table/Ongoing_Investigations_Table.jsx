@@ -19,7 +19,7 @@ const Pending_Cases_Table = ({ className }) => {
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get('https://localhost:8080/api/reports/reportsTabular', {
+        const response = await axios.get('https://backend-two-henna-56.vercel.app/api/reports/reportsTabular', {
           headers: {
             'Content-Type': 'application/json',
           },
@@ -62,7 +62,7 @@ const Pending_Cases_Table = ({ className }) => {
   const handleDelete = async (id) => {
     console.log('Delete item with ID:', id);
     try {
-      await axios.delete(`https://localhost:8080/api/reports/deleteReport/${id}`, {
+      await axios.delete(`https://backend-two-henna-56.vercel.app/api/reports/deleteReport/${id}`, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -88,7 +88,7 @@ const Pending_Cases_Table = ({ className }) => {
         console.log("inside handleComplete function, ID:", id);
 
         // Mark the report as complete
-        const response = await axios.post(`https://localhost:8080/api/reports/setComplete`, { id }, {
+        const response = await axios.post(`https://backend-two-henna-56.vercel.app/api/reports/setComplete`, { id }, {
             headers: { 'Content-Type': 'application/json' },
         });
 

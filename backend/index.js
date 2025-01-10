@@ -50,9 +50,7 @@ app.use('/database/uploads', express.static(path.join(__dirname, '../database/up
 //allowed methods
 //allowed headers
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? ['https://frontend-ten-azure-84.vercel.app'] 
-    : 'https://localhost:5173',
+  origin: process.env.NODE_ENV === 'https://frontend-ten-azure-84.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,

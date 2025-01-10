@@ -17,7 +17,7 @@ const Pending_Cases_Table = ({ className }) => {
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        const response = await axios.get('https://localhost:8080/api/reports/getCompletedReportsTabular', {
+        const response = await axios.get('https://backend-two-henna-56.vercel.app/api/reports/getCompletedReportsTabular', {
           headers: {
             'Content-Type': 'application/json',
           },

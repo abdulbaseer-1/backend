@@ -11,7 +11,7 @@ function Settings() {
   const role = localStorage.getItem('role');
   const logout = async () => {
     try {
-        const response = await axios.post('https://localhost:8080/api/users/logout', {}, {
+        const response = await axios.post('https://backend-two-henna-56.vercel.app/api/users/logout', {}, {
             withCredentials: true,
             headers: {
                 'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ function Settings() {
     const deleteAccount = async () => {
       try {
         // console.log("id from session : ", req.session.user.id); // cant do it here cus its a server side comp
-          const response = await axios.post('https://localhost:8080/api/users/deletecurrent', {} ,{ //You're passing the config options as the request body//incorrect
+          const response = await axios.post('https://backend-two-henna-56.vercel.app/api/users/deletecurrent', {} ,{ //You're passing the config options as the request body//incorrect
               withCredentials: true,
               headers: {
                   'Content-Type': 'application/json'
