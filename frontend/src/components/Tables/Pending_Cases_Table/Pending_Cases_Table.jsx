@@ -13,12 +13,13 @@ const Pending_Cases_Table = ({ className }) => {
   const [error, setError] = useState(null);
   const{setID} = useID(); //custom context hook
   const navigate = useNavigate();
+  const role = localStorage.getItem('role');
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get('https://backend-two-henna-56.vercel.app/api/reports/reportsTabular', {
+        const response = await axios.get('https://localhost:8080/api/reports/reportsTabular', {
           headers: {
             'Content-Type': 'application/json',
           },
@@ -61,7 +62,7 @@ const Pending_Cases_Table = ({ className }) => {
   const handleDelete = async (id) => {
     console.log('Delete item with ID:', id);
     try {
-      await axios.delete(`https://backend-two-henna-56.vercel.app/api/reports/deleteReport/${id}`, {
+      await axios.delete(`https://localhost:8080/api/reports/deleteReport/${id}`, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -103,12 +104,16 @@ const Pending_Cases_Table = ({ className }) => {
               >
                 <img src={detailEye} alt="View Details" className={table_style.action_icon} />
               </button>
+              {(role === 'admin') && (
+            <>
               <button 
                 onClick={() => handleDelete(row._id)}
                 className={table_style.action_button}
               >
                 <img src={dustbin} alt="Delete" className={table_style.action_icon} />
               </button>
+            </>
+          )}
             </td>
           </tr>
         ))}

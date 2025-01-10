@@ -37,7 +37,7 @@ const CreateAdmin = () => {
         setMessage('');
 
         try {
-            const response = await axios.post('https://backend-two-henna-56.vercel.app/api/admins/createAdmin',
+            const response = await axios.post('https://localhost:8080/api/admins/createAdmin',
                 { CNIC, confirmPassword },
                 {
                     headers: {

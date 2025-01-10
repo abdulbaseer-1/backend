@@ -37,7 +37,7 @@ function ReportACrime() {
     try{
       console.log("Report Form : ", ReportForm);
 
-      const request = axios.post("https://backend-two-henna-56.vercel.app/api/reports", ReportForm, {
+      const request = axios.post("https://localhost:8080/api/reports", ReportForm, {
         headers: {
           'Content-Type': 'multipart/form-data',
         }
@@ -92,6 +92,7 @@ function ReportACrime() {
                 type="text"
                 id="phone"
                 value={phone}
+                maxLength={11}
                 onChange={(e) => setPhone(e.target.value)}
               />
             </div>
