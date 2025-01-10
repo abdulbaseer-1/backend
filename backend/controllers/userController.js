@@ -34,8 +34,8 @@ const createUser = async (req, res) => {
     try{
         console.log('inside try block');
 
-        const CNIC_Front_Image = req.files?.CNIC_Front_Image ? req.files.CNIC_Front_Image[0].filename : null;
-        const userImage = req.files?.userImage ? req.files.userImage[0].filename : null;
+        const CNIC_Front_Image = req.files?.CNIC_Front_Image ? req.files.CNIC_Front_Image[0].path : null;
+        const userImage = req.files?.userImage ? req.files.userImage[0].path : null;
 
         //hash the password before storing in db // safer for production
         const hashedPassword = await bcrypt.hash(req.body.password, 10); // returns promise, so await is required to return string and not promise
