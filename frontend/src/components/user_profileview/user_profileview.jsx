@@ -39,7 +39,7 @@ const UserProfile = () => {
       <div className={styles.profile}>
       <img
           src={user && user.userImage 
-            ? `https://res.cloudinary.com/dubch5hac/image/upload/c_fill,w_300,h_300,q_auto/${user.userImage}`
+            ? `${user.userImage}`
             : testImage}
           alt="User"
           className={styles.image}

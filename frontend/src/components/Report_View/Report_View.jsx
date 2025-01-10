@@ -51,21 +51,21 @@ const CriminalProfile = () => {
         <div className={styles.images}>
           {report.ReporterImage && (
             <img
-              src={`https://res.cloudinary.com/dubch5hac/image/upload/c_fill,w_300,h_300,q_auto/${report.ReporterImage}`}
+              src={`${report.ReporterImage}`}
               alt="Reporter"
               className={styles.image}
             />
           )}
           {report.CNIC_Front_Image && (
             <img
-              src={`https://res.cloudinary.com/dubch5hac/image/upload/c_fill,w_300,h_300,q_auto/${report.CNIC_Front_Image}`}
+              src={`${report.CNIC_Front_Image}`}
               alt="CNIC Front"
               className={styles.image}
             />
           )}
           {report.ProofImage && (
             <img
-              src={`https://res.cloudinary.com/dubch5hac/image/upload/c_fill,w_300,h_300,q_auto/${report.ProofImage}`}
+              src={`${report.ProofImage}`}
               alt="Proof"
               className={styles.image}
             />
