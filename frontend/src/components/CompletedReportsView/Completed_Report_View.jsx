@@ -12,7 +12,7 @@ const CriminalProfile = () => {
     const fetchReportData = async () => {
       try {
         console.log("id here :", ID.id);
-        const response = await axios.get(`https://localhost:8080/api/reports/getCompletedReport/${ID.id}`);
+        const response = await axios.get(`https://backend-two-henna-56.vercel.app/api/reports/getCompletedReport/${ID.id}`);
         console.log('Report data fetched from backend:', response.data);
         setReport(response.data); 
       } catch (err) {
@@ -51,21 +51,21 @@ const CriminalProfile = () => {
         <div className={styles.images}>
           {report.ReporterImage && (
             <img
-              src={`https://localhost:8080/database/uploads/${report.ReporterImage}`}
+              src={`https://backend-two-henna-56.vercel.app/database/uploads/${report.ReporterImage}`}
               alt="Reporter"
               className={styles.image}
             />
           )}
           {report.CNIC_Front_Image && (
             <img
-              src={`https://localhost:8080/database/uploads/${report.CNIC_Front_Image}`}
+              src={`https://backend-two-henna-56.vercel.app/database/uploads/${report.CNIC_Front_Image}`}
               alt="CNIC Front"
               className={styles.image}
             />
           )}
           {report.ProofImage && (
             <img
-              src={`https://localhost:8080/database/uploads/${report.ProofImage}`}
+              src={`https://backend-two-henna-56.vercel.app/database/uploads/${report.ProofImage}`}
               alt="Proof"
               className={styles.image}
             />

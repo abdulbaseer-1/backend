@@ -10,7 +10,7 @@ const UserProfile = () => {
     const fetchUserData = async () => {
       try {
         // Correct the URL to match the backend route
-        const response = await axios.get('https://localhost:8080/api/users/currentUser', {
+        const response = await axios.get('https://backend-two-henna-56.vercel.app/api/users/currentUser', {
           withCredentials: true,
         });
         console.log("User data fetched from backend:", response.data);
@@ -37,7 +37,7 @@ const UserProfile = () => {
       <h1 className={styles.heading}>User Profile</h1>
       <div className={styles.profile}>
         <img
-          src={user && user.userImage ? `https://localhost:8080/database/uploads/${user.userImage}` : testImage}
+          src={user && user.userImage ? `https://backend-two-henna-56.vercel.app/database/uploads/${user.userImage}` : testImage}
           alt="User"
           className={styles.image}
         />
